@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Nodo principal de la configuración de un módulo de Magento -->
+
+<config>
+
+    <!-- El nodo module contiene información básica sobre cada módulo de Magento -->
+    <modules>
+
+        <!-- 
+            Esto debe coincidir exactamente con el nombre del namespace y el nombre del módulo,
+            es decir, con la carpeta que contiene al módulo y la carpeta del módulo, separadas con un guion bajo
+        -->
+        <Glibayi_CouponOnOriginalPrice>
+
+            <!-- La versión del módulo. Empezamos en 0.0.1 -->
+            <version>0.0.1</version>
+
+        </Glibayi_CouponOnOriginalPrice>
+
+    </modules>
+
+    <!-- Configuramos el comportamiento del módulo dentro de global -->
+    <global>
+        <!-- Definimos los modelos -->
+        <models>
+ 
+            <!--
+                Identificador único para el nodo de modelos.
+                Por convención, se escribe el nombre del módulo en minúsculas.
+            -->
+            <glibayi_coupononoriginalprice>
+ 
+                <!--
+                    La ruta a nuestro directorio de modelos, separando
+                    los directorios con guiones bajos
+                -->
+                <class>Glibayi_CouponOnOriginalPrice_Model</class>
+ 
+            </glibayi_coupononoriginalprice>
+ 
+        </models>
+        <!-- Definimos un evento observador -->
+        <events>
+ 
+            <!-- Establecemos el código del evento que queremos observar -->
+            <salesrule_validator_process>
+ 
+                <!-- Aquí definimos el observador del evento -->
+                <observers>
+ 
+                    <!--
+                        Este es el identificador único para el nodo salesrule_validator_process.
+                        Por convención, se escribe el nombre del módulo en minúsculas.    
+                    -->
+                    <glibayi_coupononoriginalprice>
+ 
+                        <!-- El modelo a instanciar-->
+                        <class>Glibayi_CouponOnOriginalPrice_Model_Observer</class>
+ 
+                        <!-- El método de la clase a llamar-->
+                        <method>apply</method>
+ 
+                        <!-- El tipo de clase a instanciar -->
+                        <type>singleton</type>
+ 
+                    </glibayi_coupononoriginalprice>
+ 
+                </observers>
+ 
+            </salesrule_validator_process>
+ 
+        </events>        
+ 
+    </global>
+
+</config>

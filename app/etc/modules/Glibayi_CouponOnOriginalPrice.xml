@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+
+	<modules>
+
+		<Glibayi_CouponOnOriginalPrice>
+
+			<!-- Indica si nuestro modulo está activo: true o false -->
+			<active>true</active>
+
+			<!-- Indica en qué directorio encontrará el módulo: core, community o local -->
+			<codePool>local</codePool>
+
+		</Glibayi_CouponOnOriginalPrice>
+
+	</modules>
+
+</config>
